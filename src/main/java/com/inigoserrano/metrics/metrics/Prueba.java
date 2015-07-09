@@ -20,7 +20,7 @@ import com.codahale.metrics.Timer;
 public class Prueba extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	static final MetricRegistry metrics = new MetricRegistry();
+	static final MetricRegistry metrics = MyMetricsServletContextListener.METRIC_REGISTRY;
 	private final Meter requests = metrics.meter("contador");
 	private final Timer responses = metrics.timer("tiempos");
 
